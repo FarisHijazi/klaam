@@ -5,6 +5,11 @@ Arabic speech recognition, classification and text-to-speech using many advanced
  <img src="https://raw.githubusercontent.com/ARBML/klaam/main/klaam_logo.PNG" width="250px"/>
  </p>
  
+ ## Installation
+
+ ```sh
+ pip install git+https://github.com/ARBML/klaam
+ ```
  
  ## Usage 
  
