@@ -15,20 +15,13 @@ def load_file_to_data(file, srate = 16_000):
 def predict(data, model, processor, mode = 'rec', 
             bw = False, return_prob = False):
     if mode == 'rec':
-        max_length = 128000
-        features = processor(data["speech"][:max_length],
+        features = processor(data["speech"],
                             sampling_rate=data["sampling_rate"],
                             padding=True,
-                            max_length=max_length, 
-                            pad_to_multiple_of=max_length,
                             return_tensors="pt")
-        
     else:
-        max_length = 320000
-        features = processor(data["speech"][:max_length], 
+        features = processor(data["speech"], 
                         sampling_rate=data["sampling_rate"],
-                        max_length=max_length,
-                        pad_to_multiple_of=max_length,
                         padding=True, return_tensors="pt")
     input_values = features.input_values.to(device)
     try:
